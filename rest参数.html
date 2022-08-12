@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // es6引入rest参数 用于获取实参，代替arguments
+        // function data (){
+        //     console.log(arguments);
+        // }
+        // data('张三','历史','里斯')//得到的是对象
+
+        // rest 参数
+        function data(...args){
+            console.log(args);
+        }
+        data('语文','英语','数学')//得到的是数组
+
+        // rest 参数必须放到最后
+        function fn(a,d,...args){
+            console.log(a);
+            console.log(d);
+            console.log(args);
+
+        }
+        fn(1,2,3,4,5,6,7,9)
+    </script>
+</body>
+</html>

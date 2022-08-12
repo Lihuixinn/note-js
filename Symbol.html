@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Symbol的值是唯一的，不能与其他数据类型进行运算，不能用for...in遍历
+
+        // 创建symbol
+        let s = Symbol();
+        // console.log(s,typeof s);
+        let s2 = Symbol('heihei');
+        let s3 = Symbol('heihei');
+        //两者结果不一样
+
+        // Symbol.for 创建
+        let s4 = Symbol.for('heihei');
+        let s5 = Symbol.for('heihei');
+        console.log(s4,typeof s4);
+        //两者结果相同
+
+        // 不能与其他数据进行运算
+        let result = s + 100;
+
+        // symbol 使用方法
+        // 1.向对象中添加方法 up down
+        let methods = {
+            up:Symbol(),
+            down:Symbol()
+        };
+        game[methods.up] = function(){
+            console.log('我乐意')
+        }
+
+        game[methods.down] = function(){
+            console.log('别管')
+        }
+        console.log(game);
+
+        let youxi = {
+            name:'狼人杀',
+            [Symbol('asy')]:function(){
+                console.log('我可以发育')
+            },
+            [Symbol('hi')]:function(){
+                console.log('我可以说话')
+            }
+        }
+        console.log(youxi);
+
+        // 内置属性
+        // 合并数组
+        const arr = [1,2,3]
+        const arr1 = [3,4,5]
+        console.log(arr.con)
+    </script>
+</body>
+</html>
