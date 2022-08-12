@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //[...]  扩展运算符能将数组转化为逗号分隔的参数序列
+        // 声明一个数组
+        // const scores = ['语文','数学','英语'];// =>'语文','数学','英语'
+
+        // function chengji(){
+        //     console.log(arguments);
+        // }
+        // chengji(...chengji);
+        
+
+        // 应用
+        const kuaizi = ['王太利','晓阳']
+        const fenghuang = ['曾毅','零花'];
+
+        // 合并
+        const zuxfh = [...kuaizi,...fenghuang];
+        console.log(zuxfh);
+
+        // 数组的克隆
+        const sanyecao =['E','G','M'] 
+        const sanzhihua = [...sanyecao];
+        console.log(sanzhihua);
+        // 将为数组转化为真正的数组
+        const divs = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr)
+    </script>
+</body>
+</html>

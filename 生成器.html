@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 生成器其实就是一个特殊的函数
+        // 异步编程 纯回调函数 node fs ajax mongodb
+        // 函数代码的分割符
+
+        // function * fn(arg){
+        //     console.log(arg)
+        //     let one = yield 111;//bbbb
+        //     let two = yield 222;//ccc
+        //     let three = yield 333;//dddd
+        // }
+
+        // // 执行获取迭代器
+        // let iterator = fn('aaa');
+        // console.log(iterator.next());
+        // // next 方法传入实参
+        // console.log(iterator.next('bbb'));
+        // console.log(iterator.next('ccc'));
+        // console.log(iterator.next('dddd'));
+
+
+        // 实例
+        // 1s 后控制台输出111 2s后输出 222 3s 输出333
+
+        // setTimeout(()=>{
+        //     console.log(111);
+        //     setTimeout(() => {
+        //         console.log(222);
+        //         setTimeout(() => {
+        //         console.log(333);
+        //     }, 3000);
+        //     }, 2000);
+        // },1000)
+
+        function one(){
+            setTimeout(()=>{
+                console.log(111);
+                iterator.next();
+            },1000)
+        }
+
+        function two(){
+            setTimeout(()=>{
+                console.log(222);
+                console.next();
+            },2000)
+        }
+        function three(){
+            setTimeout(()=>{
+                console.log(333);
+                console.next();
+            },3000)
+        }
+
+        function *fn(){//第一步走这里
+            yield one();//第二步走这里
+            yield two();
+            yield three();
+        }
+
+        // 调用生成器函数
+        let iterator = fn();
+        iterator.next;
+
+    </script>
+    
+</body>
+</html>
