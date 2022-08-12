@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const books = ['1','2','3']
+
+        // for ... of 遍历数组
+        // 保存的是数组里面的值
+
+        // for...in 遍历数组
+        //保存的是数组的下标
+        for(let v of books){
+            console.log(v);
+        }
+
+        let iterator = books[symbol.iterator]();
+        // 工作原理
+        // 第一次调用对象的next方法，指针自动指向数据结构的第一个成员
+        console.log(iterator.next());
+        // 接下来不断调用next方法，指针一直向后移动，知道指向最后一个成员
+        // 每调用next方法返回一个包含value和done属性的对象
+
+        // 应用：自定义遍历数据
+        // 声明一个对象
+        const banji = {
+
+        }
+    </script>
+</body>
+</html>

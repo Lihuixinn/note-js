@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 对象
+        // 1，new构造函数可以在内存中创建了一个空的对象
+        // 2.this 指向刚才创建的空对象
+        // 3.执行构造函数里面的代码 给这个空对象添加属性和方法
+        // 返回这个对象（不需要return）
+
+        // 创建对象
+        // 方法一 利用对象字面量
+        
+        var obj = {
+            uname:'可可',
+            type:'阿拉斯加犬',
+            age:5,
+            color:'brown',
+            skill:function(){
+                hang:bark;
+            }
+        }
+
+        // for-in 遍历对象
+        for(var k in obj){
+            console.log(k);/* k是一个变量 输出得到 属性值 */
+            console.log(obj[k]);
+        }
+
+        // 变量和属性的相同点：都用来储存数据
+        var num = 10;
+        var obj = {
+            age:18
+        }
+        console.log(obj.age);
+        // 变量 ： 单独声明并赋值 使用的时候直接写变量名 单独存在
+        // 属性 ： 在对象里面不需要声明 使用的时候必须是对象.属性
+
+        //函数和方法的相同点 ： 都是实现某种功能 
+        // 函数是单独声明 单独调用、
+        // 方法在对象里面 调用的时候 对象.方法名（）
+
+        // 方法二
+        var obj = new Object();
+        obj.uname = '张三';
+        obj.age = 18;
+        obj.sex = '男';
+        obj.sayhi = function(){
+            console.log('hi');
+        }
+
+        // 利用等号赋值的方法 添加对象的属性和方法
+        // 每个属性和方法之间用分号结束
+
+        console.log(obj.uname);
+        console.log(obj['sex']);
+        obj.sayhi();
+
+        // 3.构造函数创建对象
+        // function 构造函数名 (){
+        //     this.属性 = 值;
+        //     this.方法 = function(){}
+        // }
+        // new 构造函数名();
+
+        function Star(uname,age,sex){
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function(sang){
+                console.log(sang);
+            }
+        }
+        var ldh = new Star('刘德华',18,'男');
+        // console.log(typeof ldh);
+        console.log(ldh.name);
+        console.log(ldh['sex']);
+        ldh.sing('冰雨');
+
+        var zxy = new Star('张学友',28,'男');
+        console.log(zxy.name);
+        console.log(zxy.age);
+        zxy.sing('李香兰');
+
+
+        // 注意事项  1、构造函数名首字母要大写
+        // 2.构造的函数不需要return 就可以返回结果
+        // 调用构造函数必修使用new
+        // 只要new Star（）低啊用函数就创建一个对象 
+        // 函数里面必须加this
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
